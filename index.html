@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>Mariage – Simha & Hillel</title>
+    <link rel="icon" type="image/png" href="images/mlogo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;600;700&family=Noto+Serif+Hebrew:wght@400;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&display=swap"
+          rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.4/howler.min.js"></script>
+    <style>
+        .script-title {
+            font-family: "Great Vibes", cursive;
+            color: var(--text-script);
+        }
+        .elegant-text {
+            font-family: "Cormorant Garamond", serif;
+            color: var(--text-primary);
+            letter-spacing: 0.15em;
+        }
+        .date-text {
+            font-family: "Cormorant Garamond", serif;
+            color: var(--text-primary);
+            letter-spacing: 0.1em;
+        }
+    </style>
+</head>
+
+<body class="paper">
+
+<!-- MUSIC BUTTON -->
+<button id="musicControlBtn"
+        class="w-14 h-14 flex items-center justify-center rounded-full border border-[color:var(--gold)]
+           text-white bg-[color:var(--gold)] hover:bg-[color:var(--gold-dark)] hover:text-white
+           transition fixed bottom-4 right-4 z-50 shadow-lg hidden">
+    <i class="fa-solid fa-volume-high text-xl"></i>
+</button>
+
+
+<!-- HERO - Design épuré doré et blanc -->
+<header class="relative overflow-hidden min-h-screen flex items-center justify-center hero-clean">
+    
+    <!-- Cadre décoratif -->
+    <div class="hero-frame"></div>
+    
+    <!-- Particules flottantes -->
+    <div class="absolute inset-0 z-0 pointer-events-none">
+        <span class="floating-particle" style="top: 10%; left: 15%; animation-delay: 0s;"></span>
+        <span class="floating-particle" style="top: 20%; left: 80%; animation-delay: 1s;"></span>
+        <span class="floating-particle" style="top: 60%; left: 10%; animation-delay: 2s;"></span>
+        <span class="floating-particle" style="top: 70%; left: 85%; animation-delay: 3s;"></span>
+        <span class="floating-particle" style="top: 40%; left: 50%; animation-delay: 4s;"></span>
+        <span class="floating-particle" style="top: 85%; left: 30%; animation-delay: 5s;"></span>
+        <span class="floating-particle" style="top: 15%; left: 60%; animation-delay: 6s;"></span>
+        <span class="floating-particle" style="top: 50%; left: 25%; animation-delay: 7s;"></span>
+    </div>
+
+    <!-- Lignes courbes décoratives SVG -->
+    <svg class="absolute w-full h-full top-0 left-0 z-0 opacity-30" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+        <path d="M0,100 Q300,200 600,100 T1200,150" stroke="url(#goldGradient)" stroke-width="1" fill="transparent"/>
+        <path d="M0,250 Q400,150 800,250 T1600,200" stroke="url(#goldGradient)" stroke-width="1" fill="transparent"/>
+        <defs>
+            <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" style="stop-color:#e8d48a;stop-opacity:0"/>
+                <stop offset="50%" style="stop-color:#c9a227;stop-opacity:1"/>
+                <stop offset="100%" style="stop-color:#e8d48a;stop-opacity:0"/>
+            </linearGradient>
+        </defs>
+    </svg>
+
+ 
+    <!-- Contenu central -->
+    <div class="text-center z-10 px-6">
+        <!-- Ligne décorative -->
+        <div class="gold-line mb-10"></div>
+        
+        <!-- Noms des mariés avec halo -->
+        <h1 class="script-title text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-light mb-8 hero-title">
+            Simha & Hillel
+        </h1>
+        
+        <div class="gold-line mb-10"></div>
+        
+        <!-- Boutons de navigation -->
+        <div class="flex justify-center gap-4 flex-wrap hero-buttons">
+            <a href="#invitation"
+               class="script-title px-8 py-3 rounded-full border-2 border-[color:var(--gold)] bg-white/80 backdrop-blur-sm
+                      text-[color:var(--text-script)] hover:bg-[color:var(--gold)] hover:text-white 
+                      transition text-lg sm:text-xl shadow-md">Invitation</a>
+            <a href="#rsvpForm"
+               class="script-title px-8 py-3 rounded-full border-2 border-[color:var(--gold)] bg-[color:var(--gold)] 
+                      text-white hover:bg-[color:var(--gold-dark)]
+                      transition text-lg sm:text-xl shadow-md">Répondre</a>
+        </div>
+    </div>
+    
+    <!-- Scroll indicator -->
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center opacity-60 animate-bounce">
+        <span class="text-xs uppercase tracking-widest mb-2" style="color: var(--gold); font-family: 'Cormorant Garamond', serif;">Découvrir</span>
+        <i class="fas fa-chevron-down" style="color: var(--gold);"></i>
+    </div>
+</header>
+
+
+<!-- INVITATION TEXT -->
+<section class="max-w-4xl mx-auto px-6 py-16 sm:py-20 bg-white/90" id="invitation">
+    <div class="divider mb-12"></div>
+    
+    <div class="reveal mb-10">
+        <p class="text-center hebrew text-xl tracking-widest mb-6" style="color: var(--text-primary);">בס״ד</p>
+        <h2 class="hebrew text-center text-3xl font-light mb-6" style="color: var(--gold);">ענבי הגפן בענבי הגפן דבר נאה ומתקבל</h2>
+        <div class="grid grid-cols-2 gap-8 mb-4">
+            <div class="text-left">
+                <p class="invitation-font text-2xl mb-1" style="color: var(--text-primary);">Mme Fortunée Freoua</p>
+                <p class="invitation-font text-2xl mb-1" style="color: var(--text-primary);">Mr & Mme Arié Freoua</p>
+            </div>
+
+            <div class="text-right">
+                <p class="invitation-font text-2xl mb-1" style="color: var(--text-primary);">Mme Marcelle Cohen</p>
+                <p class="invitation-font text-2xl mb-1" style="color: var(--text-primary);">Mr & Mme Aharon Ohnona</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="reveal mb-10">
+        <p class="invitation-font text-3xl text-center reveal" style="color: var(--text-primary);">
+            Remercient Hachem de pouvoir vous annoncer le mariage de leurs petits-enfants et enfants</p>
+    </div>
+
+    <div class="reveal mb-10 text-center">
+        <div class="names-container">
+            <h1 class="script-title text-5xl sm:text-6xl md:text-7xl font-light mb-4">
+                <span>Simha</span>
+                <span class="mx-4">&</span>
+                <span>Hillel</span>
+            </h1>
+
+            <div class="flex justify-center text-3xl hebrew gap-x-16" style="color: var(--gold);">
+                <span>שמחה</span>
+                <span>הלל</span>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="reveal mb-10">
+        <p class="text-center invitation-font text-3xl" style="color: var(--text-primary);">
+            et seraient honorés de votre présence à la houppa qui se déroulera בע״ה le
+        </p>
+    </div>
+
+    <div class="reveal mb-10">
+        <div class="text-center">
+            <p class="elegant-text text-lg uppercase tracking-[0.3em] mb-3">Dimanche</p>
+            <h2 class="date-text text-5xl sm:text-6xl md:text-7xl font-light mb-4" style="color: var(--text-primary);">
+                15.03.2026
+            </h2>
+            <p class="text-2xl hebrew tracking-wide mb-4" style="color: var(--gold);">כ״ז אדר התשפ״ו</p>
+            <p class="invitation-font text-3xl sm:text-4xl font-light" style="color: var(--text-primary);">à 18h00 précises</p>
+        </div>
+    </div>
+
+    <div class="reveal mb-10">
+        <p class="text-center invitation-font text-3xl" style="color: var(--text-primary);">
+            Ainsi qu'à la réception qui suivra
+        </p>
+    </div>
+
+    <div class="reveal mb-10 text-center">
+        <h2 class="elegant-text text-2xl sm:text-3xl uppercase tracking-[0.2em] mb-4" style="color: var(--text-primary);">
+            Les Terrasses du Parc
+        </h2>
+        <p class="invitation-font text-3xl" style="color: var(--text-primary);">Villeurbanne</p>
+        <p class="mt-6 text-2xl invitation-font" style="color: var(--accent);">Une tenue dans le respect de la Halakha réjouira les mariés.</p>
+    </div>
+
+    <div class="reveal text-center">
+        <a href="doc/Carte-Simha-Hillel.pdf" download="Invitation-Simha-Hillel.pdf"
+           class="inline-flex items-center gap-3 script-title text-xl px-8 py-4 rounded-full border-2 border-[color:var(--gold)] bg-white
+            hover:bg-[color:var(--gold)] hover:text-white transition-all duration-300 shadow-md hover:shadow-xl hover:-translate-y-1">
+            <i class="fas fa-download"></i>
+            Télécharger l'invitation
+        </a>
+    </div>
+
+
+</section>
+
+<!-- INFOS & MAP -->
+<section class="max-w-4xl mx-auto px-6 py-16 sm:py-20" id="infos">
+    <div class="divider mb-12"></div>
+    <div class="grid lg:grid-cols-2 gap-10 items-start">
+        <div class="reveal">
+            <h2 class="elegant-text text-2xl sm:text-3xl uppercase tracking-[0.2em] mb-3" style="color: var(--text-primary);">
+                Les Terrasses du Parc
+            </h2>
+            <p class="invitation-font text-3xl mb-8" style="color: var(--text-primary);">Villeurbanne</p>
+
+            <div class="flex flex-wrap gap-3">
+                <!-- Google Maps -->
+                <a class="nav-button script-title px-6 py-3 rounded-full border-2 border-[color:var(--gold)] bg-white 
+                          hover:bg-[color:var(--gold)] hover:text-white transition text-lg shadow-md flex items-center gap-2"
+                   target="_blank"
+                   href="https://www.google.com/maps/search/?api=1&query=Les%20Terrasses%20du%20Parc%20Villeurbanne">
+                    Maps <i class="fa-brands fa-google"></i>
+                </a>
+
+                <!-- Waze -->
+                <a class="nav-button script-title px-6 py-3 rounded-full border-2 border-[color:var(--gold)] bg-white 
+                          hover:bg-[color:var(--gold)] hover:text-white transition text-lg shadow-md flex items-center gap-2"
+                   target="_blank"
+                   href="https://waze.com/ul?q=Les%20Terrasses%20du%20Parc%20Villeurbanne">
+                    Waze <i class="fa-brands fa-waze text-xl"></i>
+                </a>
+
+                <!-- Apple Plans -->
+                <a class="nav-button script-title px-6 py-3 rounded-full border-2 border-[color:var(--gold)] bg-white 
+                          hover:bg-[color:var(--gold)] hover:text-white transition text-lg shadow-md flex items-center gap-2"
+                   target="_blank"
+                   href="http://maps.apple.com/?q=Les+Terrasses+du+Parc+Villeurbanne">
+                    Plans <i class="fa-brands fa-apple"></i>
+                </a>
+            </div>
+
+        </div>
+
+        <div class="map-card reveal">
+            <iframe
+                    title="Carte"
+                    class="w-full aspect-[4/3]"
+                    style="border:0"
+                    loading="lazy"
+                    allowfullscreen
+                    referrerpolicy="no-referrer-when-downgrade"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2783.5!2d4.88!3d45.77!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sLes%20Terrasses%20du%20Parc%2C%20Villeurbanne!5e0!3m2!1sfr!2sfr!4v1712000000000">
+            </iframe>
+        </div>
+
+    </div>
+</section>
+
+<!-- COUNTDOWN -->
+<section class="max-w-4xl mx-auto px-6 py-16 sm:py-20">
+    <div class="divider mb-12"></div>
+    <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 reveal-stagger reveal">
+        <div class="countdown-card text-center">
+            <div class="countdown-label">Jours</div>
+            <div id="days" class="countdown-number">0</div>
+        </div>
+        <div class="countdown-card text-center">
+            <div class="countdown-label">Heures</div>
+            <div id="hours" class="countdown-number">0</div>
+        </div>
+        <div class="countdown-card text-center">
+            <div class="countdown-label">Minutes</div>
+            <div id="minutes" class="countdown-number">0</div>
+        </div>
+        <div class="countdown-card text-center">
+            <div class="countdown-label">Secondes</div>
+            <div id="seconds" class="countdown-number">0</div>
+        </div>
+    </div>
+    <div id="countdown" class="mt-8 text-sm text-center opacity-80 reveal"></div>
+</section>
+
+<!-- RSVP -->
+<section class="max-w-3xl mx-auto px-6 pb-24" id="rsvp">
+    <div class="divider mb-12"></div>
+    <div class="rsvp-card p-8 sm:p-12 shadow-2xl reveal text-center">
+        <h2 class="invitation-font text-4xl sm:text-5xl mb-2" style="color: var(--gold);">Nous serions très heureux</h2>
+        <p class="invitation-font text-3xl sm:text-4xl mb-8" style="color: var(--gold);">de vous voir parmi nous</p>
+        
+        <!-- Formulaire de réponse -->
+        <form id="rsvpForm" class="mt-8 text-left space-y-8">
+            <!-- Nom et Prénom -->
+            <div class="max-w-md mx-auto">
+                <label for="nomPrenom" class="block invitation-font text-2xl mb-3 text-center" style="color: var(--gold);">Nom et Prénom</label>
+                <input type="text" id="nomPrenom" name="nomPrenom" required
+                       class="form-input text-center"
+                       placeholder="Entrez votre nom et prénom">
+            </div>
+
+            <!-- Présence Oui/Non -->
+            <div>
+                <label class="block invitation-font text-2xl mb-4 text-center" style="color: var(--gold);">Serez-vous présent(e) ?</label>
+                <div class="flex gap-4 justify-center flex-wrap">
+                    <label class="radio-option">
+                        <input type="radio" name="presence" value="oui" id="presenceOui">
+                        <div class="radio-label invitation-font text-xl">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span>Oui, avec joie !</span>
+                        </div>
+                    </label>
+                    <label class="radio-option">
+                        <input type="radio" name="presence" value="non" id="presenceNon">
+                        <div class="radio-label invitation-font text-xl">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                            </svg>
+                            <span>Malheureusement non</span>
+                        </div>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Nombre de personnes -->
+            <div id="nombrePersonnesContainer" class="max-w-md mx-auto">
+                <label for="nombrePersonnes" class="block invitation-font text-2xl mb-3 text-center" style="color: var(--gold);">Combien de personnes ?</label>
+                <select id="nombrePersonnes" name="nombrePersonnes" disabled
+                        class="form-input text-center cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed">
+                    <option value="">Sélectionnez le nombre</option>
+                    <option value="1">1 personne</option>
+                    <option value="2">2 personnes</option>
+                    <option value="3">3 personnes</option>
+                    <option value="4">4 personnes</option>
+                    <option value="5">5 personnes</option>
+                    <option value="6">6 personnes ou plus</option>
+                </select>
+                <p id="nombrePersonnesHint" class="mt-3 invitation-font text-sm opacity-60 italic text-center">
+                    Veuillez d'abord indiquer votre présence
+                </p>
+            </div>
+
+            <!-- Message pour les mariés -->
+            <div>
+                <label for="message" class="block invitation-font text-2xl mb-3 text-center" style="color: var(--gold);">Un petit mot pour les mariés</label>
+                <textarea id="message" name="message" rows="4"
+                          class="form-input form-textarea"
+                          placeholder="Vos vœux, félicitations ou message personnel..."></textarea>
+            </div>
+
+            <!-- Bouton d'envoi -->
+            <div class="text-center pt-4">
+                <button type="submit"
+                        class="submit-btn script-title px-10 py-4 rounded-full
+                               transition-all duration-300 text-xl sm:text-2xl
+                               transform active:scale-95 shadow-lg">
+                    <i class="fas fa-paper-plane mr-3"></i>
+                    Envoyer ma réponse
+                </button>
+            </div>
+        </form>
+
+        <!-- Message de confirmation (caché par défaut) -->
+        <div id="confirmationMessage" class="hidden mt-10 p-8 confirmation-success">
+            <div class="text-center">
+                <i class="fas fa-check-circle text-5xl mb-4" style="color: var(--gold);"></i>
+                <h3 class="invitation-font text-3xl sm:text-4xl" style="color: var(--gold);">Merci pour votre réponse !</h3>
+                <p class="invitation-font text-xl mt-3" style="color: var(--text-primary);">Nous avons bien reçu votre message.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<footer class="text-center text-xs opacity-60 pb-12 reveal" style="color: var(--text-primary);">
+    <div class="divider mb-8"></div>
+    <p class="mb-2">Avec tout notre amour ❤️</p>
+    <p>Site réalisé par <a class="underline hover:text-[color:var(--gold)] transition" href="https://www.linkedin.com/in/pinhas-bentura-1ab82029b">Pinhas
+        Bentura</a></p>
+</footer>
+
+<!-- Loading spinner -->
+<div class="loading-spinner" id="loadingSpinner">
+    <div class="spinner"></div>
+    <p class="invitation-font text-lg text-center">Génération du PDF...</p>
+</div>
+
+<audio playsinline="true" id="weddingMusic" loop>
+    <source src="musique.mp3" type="audio/mpeg">
+    Votre navigateur ne supporte pas la lecture audio.
+</audio>
+
+<script src="index.js"></script>
+
+<!-- Intro Animation Script -->
+<script>
+    // Show music button on load
+    document.addEventListener('DOMContentLoaded', function() {
+        const musicBtn = document.getElementById('musicControlBtn');
+        if (musicBtn) {
+            musicBtn.classList.remove('hidden');
+        }
+    });
+</script>
+</body>
+</html>
