@@ -36,8 +36,8 @@
 
 <body class="paper">
 
-<!-- MUSIC BUTTON -->
-<button id="musicControlBtn"
+<!-- MUSIC BUTTON (Cacher ce bouton au début)-->
+<button id="musicControlBtn" style="display: none;"
         class="w-14 h-14 flex items-center justify-center rounded-full border border-[color:var(--gold)]
            text-white bg-[color:var(--gold)] hover:bg-[color:var(--gold-dark)] hover:text-white
            transition fixed bottom-4 right-4 z-50 shadow-lg hidden">
@@ -92,6 +92,7 @@
         <!-- Boutons de navigation -->
         <div class="flex justify-center gap-4 flex-wrap hero-buttons">
             <a href="#invitation"
+               id="invitationButton"
                class="script-title px-8 py-3 rounded-full border-2 border-[color:var(--gold)] bg-white/80 backdrop-blur-sm
                       text-[color:var(--text-script)] hover:bg-[color:var(--gold)] hover:text-white 
                       transition text-lg sm:text-xl shadow-md">Invitation</a>
@@ -384,7 +385,7 @@
 </div>
 
 <audio playsinline="true" id="weddingMusic" loop>
-    <source src="musique.mp3" type="audio/mpeg">
+    <source src="musique1.mp3" type="audio/mpeg">
     Votre navigateur ne supporte pas la lecture audio.
 </audio>
 

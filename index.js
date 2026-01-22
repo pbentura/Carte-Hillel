@@ -15,6 +15,11 @@ function unlockScroll() {
     scrollLocked = false;
 }
 
+// Montrer ce bouton dès qu'on clique sur "invitation"
+document.getElementById("invitationButton").addEventListener("click", () => {
+    document.getElementById("musicControlBtn").style.display = 'block';
+});
+
 // Forcer le retour en haut de page au chargement/rafraîchissement
 window.addEventListener('beforeunload', () => {
     window.scrollTo(0, 0);
@@ -131,7 +136,7 @@ tick();
 
 // === Music functionality avec Howler.js ===
 const music = new Howl({
-    src: ['musique.mp3'],
+    src: ['musique1.mp3'],
     loop: true,
     volume: 0, // commence à 0 pour le fade-in
 });
@@ -268,7 +273,8 @@ document.addEventListener('DOMContentLoaded', () => {
             try {
                 // Envoi des données au webhook n8n
                 // Note: mode 'no-cors' car le webhook n8n ne renvoie pas les headers CORS
-                await fetch('https://n8n.pbentura.cloud/webhook/75611bf0-6f53-4166-a69e-0a34077f9bc1', {
+                // await fetch('https://n8n.pbentura.cloud/webhook/75611bf0-6f53-4166-a69e-0a34077f9bc1', {
+                await fetch('https://n8n.pbentura.cloud/webhook-test/75611bf0-6f53-4166-a69e-0a34077f9bc1', {
                     method: 'POST',
                     mode: 'no-cors',
                     headers: {
