@@ -95,11 +95,11 @@
                id="invitationButton"
                class="script-title px-8 py-3 rounded-full border-2 border-[color:var(--gold)] bg-white/80 backdrop-blur-sm
                       text-[color:var(--text-script)] hover:bg-[color:var(--gold)] hover:text-white 
-                      transition text-lg sm:text-xl shadow-md">Invitation</a>
-            <a href="#rsvpForm"
-               class="script-title px-8 py-3 rounded-full border-2 border-[color:var(--gold)] bg-[color:var(--gold)] 
-                      text-white hover:bg-[color:var(--gold-dark)]
-                      transition text-lg sm:text-xl shadow-md">Répondre</a>
+                      transition text-lg sm:text-xl shadow-md">Voir invitation</a>
+<!--            <a href="#rsvpForm"-->
+<!--               class="script-title px-8 py-3 rounded-full border-2 border-[color:var(&#45;&#45;gold)] bg-[color:var(&#45;&#45;gold)] -->
+<!--                      text-white hover:bg-[color:var(&#45;&#45;gold-dark)]-->
+<!--                      transition text-lg sm:text-xl shadow-md">Répondre</a>-->
         </div>
     </div>
     
@@ -183,7 +183,15 @@
         <p class="mt-6 text-2xl invitation-font" style="color: var(--accent);">Une tenue dans le respect de la Halakha réjouira les mariés.</p>
     </div>
 
-    <div class="reveal text-center">
+    <div class="reveal text-center space-y-4">
+<!--        GÉNÉRATION PDF-->
+        <button id="generatePdfBtn"
+                class="inline-flex items-center gap-3 script-title text-xl px-8 py-4 rounded-full border-2 border-[color:var(--gold)] bg-white
+                 hover:bg-[color:var(--gold)] hover:text-white transition-all duration-300 shadow-md hover:shadow-xl hover:-translate-y-1">
+            <i class="fas fa-file-pdf"></i>
+            Générer un PDF
+        </button>
+
         <a href="doc/Carte-Simha-Hillel.pdf" download="Invitation-Simha-Hillel.pdf"
            class="inline-flex items-center gap-3 script-title text-xl px-8 py-4 rounded-full border-2 border-[color:var(--gold)] bg-white
             hover:bg-[color:var(--gold)] hover:text-white transition-all duration-300 shadow-md hover:shadow-xl hover:-translate-y-1">

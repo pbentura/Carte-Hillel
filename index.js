@@ -313,3 +313,177 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
+
+
+// === PDF Generation functionality ===
+document.addEventListener('DOMContentLoaded', () => {
+    const generatePdfBtn = document.getElementById('generatePdfBtn');
+    const loadingSpinner = document.getElementById('loadingSpinner');
+    
+    if (generatePdfBtn) {
+        generatePdfBtn.addEventListener('click', async () => {
+            try {
+                // Afficher le spinner de chargement
+                loadingSpinner.style.display = 'flex';
+                generatePdfBtn.disabled = true;
+                generatePdfBtn.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i>Génération...';
+                
+                // Récupérer la section invitation
+                const invitationSection = document.getElementById('invitation');
+                
+                // Créer une copie de la section pour le PDF
+                const clonedSection = invitationSection.cloneNode(true);
+                
+                // Appliquer des styles spécifiques pour le PDF optimisé pour une page A4
+                clonedSection.style.padding = '20px';
+                clonedSection.style.backgroundColor = 'white';
+                clonedSection.style.maxWidth = '100%';
+                clonedSection.style.margin = '0';
+                clonedSection.style.boxShadow = 'none';
+                clonedSection.style.fontSize = '12px'; // Taille de base réduite
+                
+                // Réduire les tailles de police pour optimiser l'espace
+                const style = document.createElement('style');
+                style.textContent = `
+                    .pdf-optimized {
+                        font-size: 11px !important;
+                        line-height: 1.3 !important;
+                    }
+                    .pdf-optimized .hebrew {
+                        font-size: 14px !important;
+                    }
+                    .pdf-optimized .script-title {
+                        font-size: 28px !important;
+                        margin-bottom: 8px !important;
+                    }
+                    .pdf-optimized .invitation-font {
+                        font-size: 16px !important;
+                        margin-bottom: 4px !important;
+                    }
+                    .pdf-optimized .elegant-text {
+                        font-size: 14px !important;
+                    }
+                    .pdf-optimized .date-text {
+                        font-size: 24px !important;
+                        margin-bottom: 4px !important;
+                    }
+                    .pdf-optimized .text-2xl {
+                        font-size: 18px !important;
+                    }
+                    .pdf-optimized .text-3xl {
+                        font-size: 20px !important;
+                    }
+                    .pdf-optimized .text-5xl {
+                        font-size: 28px !important;
+                    }
+                    .pdf-optimized .text-6xl {
+                        font-size: 32px !important;
+                    }
+                    .pdf-optimized .text-7xl {
+                        font-size: 36px !important;
+                    }
+                    .pdf-optimized .mb-10 {
+                        margin-bottom: 16px !important;
+                    }
+                    .pdf-optimized .mb-6 {
+                        margin-bottom: 12px !important;
+                    }
+                    .pdf-optimized .mb-4 {
+                        margin-bottom: 8px !important;
+                    }
+                    .pdf-optimized .mb-3 {
+                        margin-bottom: 6px !important;
+                    }
+                    .pdf-optimized .mb-1 {
+                        margin-bottom: 2px !important;
+                    }
+                    .pdf-optimized .gap-8 {
+                        gap: 16px !important;
+                    }
+                    .pdf-optimized .gap-x-16 {
+                        gap: 24px !important;
+                    }
+                    .pdf-optimized .grid-cols-2 {
+                        grid-template-columns: 1fr 1fr !important;
+                    }
+                    .pdf-optimized .text-center {
+                        text-align: center !important;
+                    }
+                    .pdf-optimized .text-left {
+                        text-align: left !important;
+                    }
+                    .pdf-optimized .text-right {
+                        text-align: right !important;
+                    }
+                `;
+                document.head.appendChild(style);
+                clonedSection.classList.add('pdf-optimized');
+                
+                // Cacher les éléments non désirés dans le PDF
+                const buttons = clonedSection.querySelectorAll('button, a');
+                buttons.forEach(button => button.style.display = 'none');
+                
+                // Créer un conteneur temporaire pour le PDF
+                const tempContainer = document.createElement('div');
+                tempContainer.style.position = 'absolute';
+                tempContainer.style.left = '-9999px';
+                tempContainer.style.top = '-9999px';
+                tempContainer.style.width = '190mm'; // Largeur A4 avec marges
+                tempContainer.style.minHeight = '270mm'; // Hauteur A4 avec marges
+                tempContainer.style.padding = '10mm';
+                tempContainer.style.backgroundColor = 'white';
+                tempContainer.style.overflow = 'hidden';
+                tempContainer.appendChild(clonedSection);
+                
+                document.body.appendChild(tempContainer);
+                
+                // Attendre un peu pour que les styles s'appliquent
+                await new Promise(resolve => setTimeout(resolve, 500));
+                
+                // Générer le PDF avec html2canvas et jsPDF
+                const canvas = await html2canvas(clonedSection, {
+                    scale: 1.5, // Qualité réduite pour optimiser la taille
+                    useCORS: true,
+                    logging: false,
+                    backgroundColor: '#ffffff',
+                    width: clonedSection.scrollWidth,
+                    height: Math.min(clonedSection.scrollHeight, 1000) // Limiter la hauteur
+                });
+                
+                const imgData = canvas.toDataURL('image/png', 0.8); // Qualité d'image réduite
+                
+                // Créer le PDF
+                const { jsPDF } = window.jspdf;
+                const pdf = new jsPDF('p', 'mm', 'a4');
+                
+                const imgWidth = 190; // Largeur avec marges
+                const pageHeight = 277; // Hauteur avec marges
+                const imgHeight = (canvas.height * imgWidth) / canvas.width;
+                
+                // Centrer l'image sur la page
+                const xOffset = (210 - imgWidth) / 2;
+                const yOffset = (297 - Math.min(imgHeight, pageHeight)) / 2;
+                
+                // Ajouter l'image au PDF (une seule page)
+                pdf.addImage(imgData, 'PNG', xOffset, yOffset, imgWidth, Math.min(imgHeight, pageHeight));
+                
+                // Télécharger le PDF
+                pdf.save('Invitation-Simha-Hillel.pdf');
+                
+                // Nettoyer
+                document.body.removeChild(tempContainer);
+                document.head.removeChild(style);
+                
+            } catch (error) {
+                console.error('Erreur lors de la génération du PDF:', error);
+                alert('Une erreur est survenue lors de la génération du PDF. Veuillez réessayer.');
+            } finally {
+                // Cacher le spinner et réactiver le bouton
+                loadingSpinner.style.display = 'none';
+                generatePdfBtn.disabled = false;
+                generatePdfBtn.innerHTML = '<i class="fas fa-file-pdf mr-2"></i>Générer un PDF';
+            }
+        });
+    }
+});
