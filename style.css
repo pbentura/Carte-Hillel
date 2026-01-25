@@ -930,6 +930,147 @@ footer {
     }
 }
 
+/* Particules décoratives supplémentaires */
+.deco-particle {
+    position: absolute;
+    font-size: 0.8rem;
+    color: var(--gold);
+    opacity: 0.3;
+    animation: particleFloat 8s ease-in-out infinite;
+    pointer-events: none;
+}
+
+@keyframes particleFloat {
+    0%, 100% {
+        transform: translateY(0) translateX(0) rotate(0deg);
+        opacity: 0.2;
+    }
+    25% {
+        transform: translateY(-15px) translateX(10px) rotate(90deg);
+        opacity: 0.4;
+    }
+    50% {
+        transform: translateY(0) translateX(0) rotate(180deg);
+        opacity: 0.2;
+    }
+    75% {
+        transform: translateY(15px) translateX(-10px) rotate(270deg);
+        opacity: 0.4;
+    }
+}
+
+/* Lignes décoratives diagonales */
+.deco-line {
+    position: absolute;
+    background: linear-gradient(45deg, transparent, var(--gold), transparent);
+    opacity: 0.1;
+    pointer-events: none;
+}
+
+.deco-line-1 {
+    width: 200px;
+    height: 1px;
+    top: 20%;
+    left: -50px;
+    transform: rotate(35deg);
+    animation: lineGlow 4s ease-in-out infinite;
+}
+
+.deco-line-2 {
+    width: 150px;
+    height: 1px;
+    bottom: 25%;
+    right: -30px;
+    transform: rotate(-25deg);
+    animation: lineGlow 4s ease-in-out infinite 2s;
+}
+
+@keyframes lineGlow {
+    0%, 100% {
+        opacity: 0.08;
+        transform: rotate(35deg) scaleX(1);
+    }
+    50% {
+        opacity: 0.15;
+        transform: rotate(35deg) scaleX(1.1);
+    }
+}
+
+.deco-line-2 {
+    transform: rotate(-25deg) scaleX(1);
+}
+
+.deco-line-2:nth-child(even) {
+    animation-delay: 2s;
+}
+
+.deco-line-2:nth-child(even) {
+    transform: rotate(-25deg) scaleX(1.1);
+}
+
+/* Points de lumière scintillants */
+.light-dot {
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    background: var(--gold);
+    border-radius: 50%;
+    opacity: 0;
+    animation: twinkle 3s ease-in-out infinite;
+    pointer-events: none;
+}
+
+.light-dot-1 {
+    top: 15%;
+    left: 10%;
+    animation-delay: 0s;
+}
+
+.light-dot-2 {
+    top: 30%;
+    right: 15%;
+    animation-delay: 0.8s;
+}
+
+.light-dot-3 {
+    top: 60%;
+    left: 8%;
+    animation-delay: 1.6s;
+}
+
+.light-dot-4 {
+    top: 80%;
+    right: 12%;
+    animation-delay: 2.4s;
+}
+
+@keyframes twinkle {
+    0%, 100% {
+        opacity: 0;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.6;
+        transform: scale(1.5);
+    }
+}
+
+/* Mobile responsiveness pour nouveaux éléments */
+@media (max-width: 768px) {
+    .deco-particle {
+        font-size: 0.6rem;
+    }
+    
+    .deco-line {
+        transform: scale(0.7);
+    }
+    
+    .light-dot {
+        width: 2px;
+        height: 2px;
+    }
+}
+
 /* ===== PRINT STYLES ===== */
 @media print {
     .intro-overlay,

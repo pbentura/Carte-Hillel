@@ -114,6 +114,48 @@
 <!-- INVITATION TEXT -->
 <section class="max-w-4xl mx-auto px-6 py-16 sm:py-20 bg-white/90" id="invitation">
     <div class="divider mb-12"></div>
+
+    <!-- Éléments décoratifs animés -->
+    <div class="invitation-watermarks">
+        <!-- Cercles concentriques -->
+        <div class="watermark-circle circle-1"></div>
+        <div class="watermark-circle circle-2"></div>
+        <div class="watermark-circle circle-3"></div>
+        
+        <!-- Étoiles flottantes -->
+        <div class="watermark-star star-1">✦</div>
+        <div class="watermark-star star-2">✧</div>
+        <div class="watermark-star star-3">✦</div>
+        <div class="watermark-star star-4">✧</div>
+        <div class="watermark-star star-5">✦</div>
+        
+        <!-- Ornements floraux -->
+        <div class="watermark-ornament ornament-tl">❦</div>
+        <div class="watermark-ornament ornament-br">❦</div>
+        
+        <!-- Vagues décoratives SVG -->
+        <svg class="watermark-waves" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 250" preserveAspectRatio="none">
+            <path class="wave wave-1" d="M0,125 Q300,50 600,125 T1200,125" />
+            <path class="wave wave-2" d="M0,150 Q300,100 600,150 T1200,150" />
+        </svg>
+        
+        <!-- Particules flottantes -->
+        <span class="deco-particle" style="top: 10%; left: 5%; animation-delay: 0s;">✦</span>
+        <span class="deco-particle" style="top: 25%; right: 8%; animation-delay: 1.5s;">✧</span>
+        <span class="deco-particle" style="top: 45%; left: 3%; animation-delay: 3s;">✦</span>
+        <span class="deco-particle" style="top: 65%; right: 5%; animation-delay: 4.5s;">✧</span>
+        <span class="deco-particle" style="top: 85%; left: 7%; animation-delay: 6s;">✦</span>
+        
+        <!-- Lignes décoratives diagonales -->
+        <div class="deco-line deco-line-1"></div>
+        <div class="deco-line deco-line-2"></div>
+        
+        <!-- Points de lumière -->
+        <div class="light-dot light-dot-1"></div>
+        <div class="light-dot light-dot-2"></div>
+        <div class="light-dot light-dot-3"></div>
+        <div class="light-dot light-dot-4"></div>
+    </div>
     
     <div class="reveal mb-10">
         <p class="text-center hebrew text-xl tracking-widest mb-6" style="color: var(--text-primary);">בס״ד</p>
@@ -185,12 +227,12 @@
 
     <div class="reveal text-center space-y-4">
 <!--        GÉNÉRATION PDF-->
-        <button id="generatePdfBtn"
-                class="inline-flex items-center gap-3 script-title text-xl px-8 py-4 rounded-full border-2 border-[color:var(--gold)] bg-white
-                 hover:bg-[color:var(--gold)] hover:text-white transition-all duration-300 shadow-md hover:shadow-xl hover:-translate-y-1">
-            <i class="fas fa-file-pdf"></i>
-            Générer un PDF
-        </button>
+<!--        <button id="generatePdfBtn"-->
+<!--                class="inline-flex items-center gap-3 script-title text-xl px-8 py-4 rounded-full border-2 border-[color:var(&#45;&#45;gold)] bg-white-->
+<!--                 hover:bg-[color:var(&#45;&#45;gold)] hover:text-white transition-all duration-300 shadow-md hover:shadow-xl hover:-translate-y-1">-->
+<!--            <i class="fas fa-file-pdf"></i>-->
+<!--            Générer un PDF-->
+<!--        </button>-->
 
         <a href="doc/Carte-Simha-Hillel.pdf" download="Invitation-Simha-Hillel.pdf"
            class="inline-flex items-center gap-3 script-title text-xl px-8 py-4 rounded-full border-2 border-[color:var(--gold)] bg-white
