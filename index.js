@@ -136,7 +136,7 @@ tick();
 
 // === Music functionality avec Howler.js ===
 const music = new Howl({
-    src: ['musique1.mp3'],
+    src: ['musique2.mp3'],
     loop: true,
     volume: 0, // commence à 0 pour le fade-in
 });
