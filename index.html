@@ -115,46 +115,164 @@
 <section class="max-w-4xl mx-auto px-6 py-16 sm:py-20 bg-white/90" id="invitation">
     <div class="divider mb-12"></div>
 
-    <!-- Éléments décoratifs animés -->
-    <div class="invitation-watermarks">
-        <!-- Cercles concentriques -->
-        <div class="watermark-circle circle-1"></div>
-        <div class="watermark-circle circle-2"></div>
-        <div class="watermark-circle circle-3"></div>
+    <!-- Fond décoratif luxueux -->
+    <div class="luxury-background">
+        <!-- Grand cadre ornemental -->
+        <div class="ornate-frame">
+            <div class="frame-border"></div>
+            <div class="frame-inner"></div>
+        </div>
         
-        <!-- Étoiles flottantes -->
-        <div class="watermark-star star-1">✦</div>
-        <div class="watermark-star star-2">✧</div>
-        <div class="watermark-star star-3">✦</div>
-        <div class="watermark-star star-4">✧</div>
-        <div class="watermark-star star-5">✦</div>
-        
-        <!-- Ornements floraux -->
-        <div class="watermark-ornament ornament-tl">❦</div>
-        <div class="watermark-ornament ornament-br">❦</div>
-        
-        <!-- Vagues décoratives SVG -->
-        <svg class="watermark-waves" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 250" preserveAspectRatio="none">
-            <path class="wave wave-1" d="M0,125 Q300,50 600,125 T1200,125" />
-            <path class="wave wave-2" d="M0,150 Q300,100 600,150 T1200,150" />
+        <!-- Coins floraux élégants SVG -->
+        <svg class="corner-flourish corner-top-left" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+            <path d="M10,190 Q10,10 190,10" stroke="#c9a227" stroke-width="3" fill="none"/>
+            <path d="M25,190 Q25,25 190,25" stroke="#c9a227" stroke-width="2" fill="none" opacity="0.6"/>
+            <path d="M40,190 Q40,40 190,40" stroke="#c9a227" stroke-width="1" fill="none" opacity="0.4"/>
+            <!-- Spirale florale coin -->
+            <path d="M15,80 Q50,60 40,30 Q60,50 85,15" stroke="#c9a227" stroke-width="2" fill="none"/>
+            <path d="M80,15 Q60,45 25,35 Q45,60 15,85" stroke="#c9a227" stroke-width="2" fill="none"/>
+            <circle cx="50" cy="50" r="8" fill="#c9a227" opacity="0.3"/>
+            <circle cx="50" cy="50" r="4" fill="#c9a227" opacity="0.6"/>
         </svg>
         
-        <!-- Particules flottantes -->
-        <span class="deco-particle" style="top: 10%; left: 5%; animation-delay: 0s;">✦</span>
-        <span class="deco-particle" style="top: 25%; right: 8%; animation-delay: 1.5s;">✧</span>
-        <span class="deco-particle" style="top: 45%; left: 3%; animation-delay: 3s;">✦</span>
-        <span class="deco-particle" style="top: 65%; right: 5%; animation-delay: 4.5s;">✧</span>
-        <span class="deco-particle" style="top: 85%; left: 7%; animation-delay: 6s;">✦</span>
+        <svg class="corner-flourish corner-top-right" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+            <path d="M190,190 Q190,10 10,10" stroke="#c9a227" stroke-width="3" fill="none"/>
+            <path d="M175,190 Q175,25 10,25" stroke="#c9a227" stroke-width="2" fill="none" opacity="0.6"/>
+            <path d="M160,190 Q160,40 10,40" stroke="#c9a227" stroke-width="1" fill="none" opacity="0.4"/>
+            <path d="M185,80 Q150,60 160,30 Q140,50 115,15" stroke="#c9a227" stroke-width="2" fill="none"/>
+            <path d="M120,15 Q140,45 175,35 Q155,60 185,85" stroke="#c9a227" stroke-width="2" fill="none"/>
+            <circle cx="150" cy="50" r="8" fill="#c9a227" opacity="0.3"/>
+            <circle cx="150" cy="50" r="4" fill="#c9a227" opacity="0.6"/>
+        </svg>
         
-        <!-- Lignes décoratives diagonales -->
-        <div class="deco-line deco-line-1"></div>
-        <div class="deco-line deco-line-2"></div>
+        <svg class="corner-flourish corner-bottom-left" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+            <path d="M10,10 Q10,190 190,190" stroke="#c9a227" stroke-width="3" fill="none"/>
+            <path d="M25,10 Q25,175 190,175" stroke="#c9a227" stroke-width="2" fill="none" opacity="0.6"/>
+            <path d="M40,10 Q40,160 190,160" stroke="#c9a227" stroke-width="1" fill="none" opacity="0.4"/>
+            <path d="M15,120 Q50,140 40,170 Q60,150 85,185" stroke="#c9a227" stroke-width="2" fill="none"/>
+            <path d="M80,185 Q60,155 25,165 Q45,140 15,115" stroke="#c9a227" stroke-width="2" fill="none"/>
+            <circle cx="50" cy="150" r="8" fill="#c9a227" opacity="0.3"/>
+            <circle cx="50" cy="150" r="4" fill="#c9a227" opacity="0.6"/>
+        </svg>
         
-        <!-- Points de lumière -->
-        <div class="light-dot light-dot-1"></div>
-        <div class="light-dot light-dot-2"></div>
-        <div class="light-dot light-dot-3"></div>
-        <div class="light-dot light-dot-4"></div>
+        <svg class="corner-flourish corner-bottom-right" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+            <path d="M190,10 Q190,190 10,190" stroke="#c9a227" stroke-width="3" fill="none"/>
+            <path d="M175,10 Q175,175 10,175" stroke="#c9a227" stroke-width="2" fill="none" opacity="0.6"/>
+            <path d="M160,10 Q160,160 10,160" stroke="#c9a227" stroke-width="1" fill="none" opacity="0.4"/>
+            <path d="M185,120 Q150,140 160,170 Q140,150 115,185" stroke="#c9a227" stroke-width="2" fill="none"/>
+            <path d="M120,185 Q140,155 175,165 Q155,140 185,115" stroke="#c9a227" stroke-width="2" fill="none"/>
+            <circle cx="150" cy="150" r="8" fill="#c9a227" opacity="0.3"/>
+            <circle cx="150" cy="150" r="4" fill="#c9a227" opacity="0.6"/>
+        </svg>
+        
+        <!-- Arabesques latérales -->
+        <svg class="side-arabesque left-arabesque" viewBox="0 0 60 400" xmlns="http://www.w3.org/2000/svg">
+            <path d="M30,0 Q50,50 30,100 Q10,150 30,200 Q50,250 30,300 Q10,350 30,400" stroke="#c9a227" stroke-width="2" fill="none"/>
+            <path d="M30,50 Q40,75 30,100" stroke="#c9a227" stroke-width="3" fill="none" opacity="0.5"/>
+            <path d="M30,150 Q20,175 30,200" stroke="#c9a227" stroke-width="3" fill="none" opacity="0.5"/>
+            <path d="M30,250 Q40,275 30,300" stroke="#c9a227" stroke-width="3" fill="none" opacity="0.5"/>
+            <circle cx="30" cy="100" r="5" fill="#c9a227" opacity="0.4"/>
+            <circle cx="30" cy="200" r="5" fill="#c9a227" opacity="0.4"/>
+            <circle cx="30" cy="300" r="5" fill="#c9a227" opacity="0.4"/>
+        </svg>
+        
+        <svg class="side-arabesque right-arabesque" viewBox="0 0 60 400" xmlns="http://www.w3.org/2000/svg">
+            <path d="M30,0 Q10,50 30,100 Q50,150 30,200 Q10,250 30,300 Q50,350 30,400" stroke="#c9a227" stroke-width="2" fill="none"/>
+            <path d="M30,50 Q20,75 30,100" stroke="#c9a227" stroke-width="3" fill="none" opacity="0.5"/>
+            <path d="M30,150 Q40,175 30,200" stroke="#c9a227" stroke-width="3" fill="none" opacity="0.5"/>
+            <path d="M30,250 Q20,275 30,300" stroke="#c9a227" stroke-width="3" fill="none" opacity="0.5"/>
+            <circle cx="30" cy="100" r="5" fill="#c9a227" opacity="0.4"/>
+            <circle cx="30" cy="200" r="5" fill="#c9a227" opacity="0.4"/>
+            <circle cx="30" cy="300" r="5" fill="#c9a227" opacity="0.4"/>
+        </svg>
+        
+        <!-- Séparateur haut avec ornements -->
+        <svg class="top-ornament" viewBox="0 0 600 80" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0,40 L200,40 Q230,40 240,30 Q250,20 260,30 Q270,40 300,40 Q330,40 340,30 Q350,20 360,30 Q370,40 400,40 L600,40" stroke="#c9a227" stroke-width="2" fill="none"/>
+            <path d="M280,25 Q300,5 320,25" stroke="#c9a227" stroke-width="2" fill="none"/>
+            <path d="M290,30 Q300,15 310,30" stroke="#c9a227" stroke-width="1.5" fill="none"/>
+            <circle cx="300" cy="40" r="6" fill="#c9a227" opacity="0.5"/>
+            <circle cx="300" cy="40" r="3" fill="#c9a227"/>
+        </svg>
+        
+        <!-- Séparateur bas avec ornements -->
+        <svg class="bottom-ornament" viewBox="0 0 600 80" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0,40 L200,40 Q230,40 240,50 Q250,60 260,50 Q270,40 300,40 Q330,40 340,50 Q350,60 360,50 Q370,40 400,40 L600,40" stroke="#c9a227" stroke-width="2" fill="none"/>
+            <path d="M280,55 Q300,75 320,55" stroke="#c9a227" stroke-width="2" fill="none"/>
+            <path d="M290,50 Q300,65 310,50" stroke="#c9a227" stroke-width="1.5" fill="none"/>
+            <circle cx="300" cy="40" r="6" fill="#c9a227" opacity="0.5"/>
+            <circle cx="300" cy="40" r="3" fill="#c9a227"/>
+        </svg>
+        
+        <!-- Motifs d'anneaux de mariage centrés -->
+        <div class="wedding-rings-watermark"></div>
+        
+        <!-- FOND FILIGRANE avec reliefs stylés -->
+        <svg class="filigree-background" viewBox="0 0 800 1200" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+            <defs>
+                <linearGradient id="filigreeGold" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" style="stop-color:#c9a227;stop-opacity:0.15"/>
+                    <stop offset="50%" style="stop-color:#e8d48a;stop-opacity:0.1"/>
+                    <stop offset="100%" style="stop-color:#c9a227;stop-opacity:0.15"/>
+                </linearGradient>
+                <!-- Pattern de damier pour effet relief -->
+                <pattern id="damaskPattern" x="0" y="0" width="200" height="200" patternUnits="userSpaceOnUse">
+                    <!-- Motif central fleur de lys -->
+                    <path d="M100,20 Q110,50 100,70 Q90,50 100,20" fill="url(#filigreeGold)"/>
+                    <path d="M100,180 Q110,150 100,130 Q90,150 100,180" fill="url(#filigreeGold)"/>
+                    <path d="M20,100 Q50,110 70,100 Q50,90 20,100" fill="url(#filigreeGold)"/>
+                    <path d="M180,100 Q150,110 130,100 Q150,90 180,100" fill="url(#filigreeGold)"/>
+                    <!-- Arabesques diagonales -->
+                    <path d="M30,30 Q60,50 50,80 Q80,70 100,100" stroke="url(#filigreeGold)" stroke-width="2" fill="none"/>
+                    <path d="M170,30 Q140,50 150,80 Q120,70 100,100" stroke="url(#filigreeGold)" stroke-width="2" fill="none"/>
+                    <path d="M30,170 Q60,150 50,120 Q80,130 100,100" stroke="url(#filigreeGold)" stroke-width="2" fill="none"/>
+                    <path d="M170,170 Q140,150 150,120 Q120,130 100,100" stroke="url(#filigreeGold)" stroke-width="2" fill="none"/>
+                    <!-- Cercle central -->
+                    <circle cx="100" cy="100" r="15" fill="none" stroke="url(#filigreeGold)" stroke-width="2"/>
+                    <circle cx="100" cy="100" r="8" fill="url(#filigreeGold)" opacity="0.3"/>
+                    <!-- Petites fleurs aux coins -->
+                    <circle cx="25" cy="25" r="5" fill="url(#filigreeGold)"/>
+                    <circle cx="175" cy="25" r="5" fill="url(#filigreeGold)"/>
+                    <circle cx="25" cy="175" r="5" fill="url(#filigreeGold)"/>
+                    <circle cx="175" cy="175" r="5" fill="url(#filigreeGold)"/>
+                </pattern>
+            </defs>
+            
+            <!-- Fond avec le pattern -->
+            <rect width="100%" height="100%" fill="url(#damaskPattern)"/>
+            
+            <!-- Motifs de coins élaborés -->
+            <g transform="translate(100, 150)" opacity="0.1">
+                <path d="M0,0 Q50,30 30,80 Q60,60 100,100 Q60,80 80,30 Q30,50 0,0" fill="#c9a227"/>
+            </g>
+            <g transform="translate(700, 150) scale(-1,1)" opacity="0.1">
+                <path d="M0,0 Q50,30 30,80 Q60,60 100,100 Q60,80 80,30 Q30,50 0,0" fill="#c9a227"/>
+            </g>
+            <g transform="translate(100, 1050) scale(1,-1)" opacity="0.1">
+                <path d="M0,0 Q50,30 30,80 Q60,60 100,100 Q60,80 80,30 Q30,50 0,0" fill="#c9a227"/>
+            </g>
+            <g transform="translate(700, 1050) scale(-1,-1)" opacity="0.1">
+                <path d="M0,0 Q50,30 30,80 Q60,60 100,100 Q60,80 80,30 Q30,50 0,0" fill="#c9a227"/>
+            </g>
+            
+            <!-- Guirlandes ondulantes -->
+            <path d="M50,300 Q200,250 400,300 Q600,350 750,300" stroke="#c9a227" stroke-width="3" fill="none" opacity="0.08"/>
+            <path d="M50,900 Q200,950 400,900 Q600,850 750,900" stroke="#c9a227" stroke-width="3" fill="none" opacity="0.08"/>
+            
+            <!-- Motifs de feuilles d'acanthe latéraux -->
+            <g transform="translate(50, 500)" opacity="0.1">
+                <path d="M0,0 Q20,-30 10,-60 Q30,-40 20,-10 Q40,-30 30,0 Q50,-20 40,20 Q60,0 50,40 Q70,20 60,60" stroke="#c9a227" stroke-width="2" fill="none"/>
+            </g>
+            <g transform="translate(750, 500) scale(-1,1)" opacity="0.1">
+                <path d="M0,0 Q20,-30 10,-60 Q30,-40 20,-10 Q40,-30 30,0 Q50,-20 40,20 Q60,0 50,40 Q70,20 60,60" stroke="#c9a227" stroke-width="2" fill="none"/>
+            </g>
+            <g transform="translate(50, 700)" opacity="0.1">
+                <path d="M0,0 Q20,-30 10,-60 Q30,-40 20,-10 Q40,-30 30,0 Q50,-20 40,20 Q60,0 50,40 Q70,20 60,60" stroke="#c9a227" stroke-width="2" fill="none"/>
+            </g>
+            <g transform="translate(750, 700) scale(-1,1)" opacity="0.1">
+                <path d="M0,0 Q20,-30 10,-60 Q30,-40 20,-10 Q40,-30 30,0 Q50,-20 40,20 Q60,0 50,40 Q70,20 60,60" stroke="#c9a227" stroke-width="2" fill="none"/>
+            </g>
+        </svg>
     </div>
     
     <div class="reveal mb-10">
