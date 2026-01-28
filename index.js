@@ -273,8 +273,8 @@ document.addEventListener('DOMContentLoaded', () => {
             try {
                 // Envoi des données au webhook n8n
                 // Note: mode 'no-cors' car le webhook n8n ne renvoie pas les headers CORS
-                // await fetch('https://n8n.pbentura.cloud/webhook/75611bf0-6f53-4166-a69e-0a34077f9bc1', {
-                await fetch('https://n8n.pbentura.cloud/webhook-test/75611bf0-6f53-4166-a69e-0a34077f9bc1', {
+                await fetch('https://n8n.pbentura.cloud/webhook/75611bf0-6f53-4166-a69e-0a34077f9bc1', {
+                // await fetch('https://n8n.pbentura.cloud/webhook-test/75611bf0-6f53-4166-a69e-0a34077f9bc1', {
                     method: 'POST',
                     mode: 'no-cors',
                     headers: {
